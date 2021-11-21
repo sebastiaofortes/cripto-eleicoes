@@ -2,12 +2,13 @@ package br.com.eleicao.eleicao.controller;
 
 
 import java.util.ArrayList;
+
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -18,20 +19,16 @@ import br.com.eleicao.eleicao.model.Voto;
 @Controller
 public class MainController {
 	
-	
-
+//Autowired faz com que uma instância da classe Votacao seja criada automaticamente pelo IOC do Spring 	
+// após criada essa instância vai ser atribuída a variavel zona1
+// na classe VotacaoConfiguration existe um bean definindo para o IOC como instanciar o objeto Votacao
+@Autowired
 private Votacao zona1;
 
 @RequestMapping("/")
 public String IniciarVotacao () {
 	
-	Set<Integer> codigos1 = new LinkedHashSet<Integer> ();
-	Random Rand = new Random();
-	List<Voto> fila = new ArrayList<Voto>();
-	List<Cedulas> urna = new ArrayList<Cedulas>();
 
-	
-	this.zona1 = new Votacao(codigos1, Rand, fila, urna);
 	
 	return "index";
 }	

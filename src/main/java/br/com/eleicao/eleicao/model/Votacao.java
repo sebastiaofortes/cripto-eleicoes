@@ -1,10 +1,14 @@
 package br.com.eleicao.eleicao.model;
 
-import java.util.ArrayList;
+
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+
+
+
 
 public class Votacao {
 	
@@ -18,6 +22,7 @@ public Votacao(Set<Integer> codigos,Random Rand,List<Voto> fila, List<Cedulas> u
 		this.Rand = Rand;
 		this.fila = fila;
 		this.urna = urna;
+		System.out.println("Classe votação criada");
 	
 	}
 
