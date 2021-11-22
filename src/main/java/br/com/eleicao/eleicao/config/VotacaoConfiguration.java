@@ -9,7 +9,7 @@ import java.util.Set;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import br.com.eleicao.eleicao.model.Cedulas;
+import br.com.eleicao.eleicao.model.Cedula;
 import br.com.eleicao.eleicao.model.Votacao;
 import br.com.eleicao.eleicao.model.Voto;
 
@@ -23,7 +23,7 @@ public Votacao votacao() {
 	Set<Integer> codigos1 = new LinkedHashSet<Integer> ();
 	Random Rand = new Random();
 	List<Voto> fila = new ArrayList<Voto>();
-	List<Cedulas> urna = new ArrayList<Cedulas>();
+	List<Cedula> urna = new ArrayList<Cedula>();
 
 	
 	return new Votacao(codigos1, Rand, fila, urna);

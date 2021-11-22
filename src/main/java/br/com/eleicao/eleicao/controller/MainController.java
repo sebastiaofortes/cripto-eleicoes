@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.eleicao.eleicao.model.Cedulas;
+import br.com.eleicao.eleicao.model.Cedula;
 import br.com.eleicao.eleicao.model.Votacao;
 import br.com.eleicao.eleicao.model.Voto;
 
@@ -41,9 +41,18 @@ public String Votar () {
 	Voto voto2 = zona1.geraVoto(1);
 	Voto voto3 = zona1.geraVoto(1);
 	
-	zona1.processaoVoto(voto1);
-	zona1.processaoVoto(voto2);
-	zona1.processaoVoto(voto3);
+
+	Cedula cedula1 = zona1.Geracedula(voto1);
+	
+	Cedula cedula2 = zona1.Geracedula(voto2);
+
+	Cedula cedula3 = zona1.Geracedula(voto3);
+	
+	
+	zona1.AdicionaUrna(cedula1);
+	zona1.AdicionaUrna(cedula2);
+	zona1.AdicionaUrna(cedula3);
+	
 	
 	zona1.EncerraVotacao();
 	
